@@ -4,7 +4,7 @@ defined('XOOPS_ROOT_PATH') or die('Restricted access');
 
 class EasiestmlCorePreload extends XoopsPreloadItem
 {
-    function eventCoreIncludeCommonStart($args)
+    static function eventCoreIncludeCommonStart($args)
     {
         include_once dirname(dirname(__FILE__)) . '/easiestml.php';
     }
@@ -31,7 +31,7 @@ class EasiestmlCorePreload extends XoopsPreloadItem
             }
         }
 
-        $GLOBALS['xoopsConfig']['language'] = $easiestml_dirs[EASIESTML_DEFAULT_LANG];
+        $GLOBALS['xoopsConfig']['language'] = $easiestml_langs[EASIESTML_DEFAULT_LANG];
         return true;
 
     }
